@@ -1,0 +1,25 @@
+using System;
+
+class Payroll
+{
+    static void Main(string[] args)
+    {
+        // Employee data
+        string[] names = {"John", "Jane", "Bob", "Sara"};
+        int[] hoursWorked = {160, 170, 180, 190};
+        double[] hourlyRates = {20.0, 22.5, 25.0, 27.5};
+        double[] arrears = {0, 0, 0, 0};
+
+        // Calculate arrears
+        for (int i = 0; i < names.Length; i++)
+        {
+            arrears[i] = (hoursWorked[i] * hourlyRates[i]) - (hoursWorked[i] * hourlyRates[i] * 0.1);
+        }
+
+        // Pay salaries in arrears
+        for (int i = 0; i < names.Length; i++)
+        {
+            Console.WriteLine("Paying salary in arrears to " + names[i] + ": $" + arrears[i]);
+        }
+    }
+}
